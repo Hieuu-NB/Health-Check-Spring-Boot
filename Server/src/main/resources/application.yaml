@@ -1,0 +1,31 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: test-health-check
+  cloud:
+    discovery:
+      enabled: false
+
+management:
+  health:
+    diskspace:
+      enabled: false
+    probes:
+      enabled: true
+    livenessstate:
+      simple: true
+    readinessstate:
+      simple: true
+
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+
